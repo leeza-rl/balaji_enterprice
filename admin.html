@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Balaji Enterprise — Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{ --teal:#2C3968; --gold:#F2A93B; --brick:#9A3B3B; --cream:#FFF7EA; --cream2:#F7E9CF; --line:rgba(43,38,34,0.15); }
+  *{box-sizing:border-box;}
+  body{ font-family:'Work Sans',sans-serif; background:var(--cream); margin:0; padding:0; color:#2B2622; }
+  header{ background:var(--teal); color:var(--cream); padding:18px 24px; display:flex; justify-content:space-between; align-items:center; }
+  header h1{ font-size:1.2rem; margin:0; }
+  main{ max-width:1000px; margin:0 auto; padding:24px; }
+  .tabs{ display:flex; gap:10px; margin-bottom:20px; }
+  .tab{ padding:10px 18px; border-radius:8px; background:var(--cream2); cursor:pointer; font-weight:600; font-size:0.9rem; border:none; }
+  .tab.active{ background:var(--teal); color:var(--cream); }
+  .panel{ display:none; }
+  .panel.active{ display:block; }
+  .login-box{ max-width:360px; margin:80px auto; background:#fff; padding:28px; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.06); }
+  .login-box h2{ color:var(--teal); margin-top:0; }
+  input, textarea, select{ width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:7px; margin-bottom:10px; font-family:inherit; font-size:0.9rem; }
+  button.btn{ background:var(--teal); color:var(--cream); padding:11px 18px; border-radius:8px; border:none; font-weight:600; cursor:pointer; }
+  button.btn:hover{ background:var(--brick); }
+  button.btn.danger{ background:var(--brick); }
+  table{ width:100%; border-collapse:collapse; background:#fff; border-radius:10px; overflow:hidden; }
+  th, td{ padding:10px 12px; text-align:left; border-bottom:1px solid var(--line); font-size:0.85rem; }
+  th{ background:var(--cream2); }
+  .row-actions{ display:flex; gap:8px; }
+  .row-actions button{ padding:5px 10px; font-size:0.75rem; border-radius:5px; border:none; cursor:pointer; }
+  .edit-btn{ background:var(--gold); color:#2B2622; }
+  .del-btn{ background:var(--brick); color:#fff; }
+  .card-form{ background:#fff; padding:20px; border-radius:12px; margin-bottom:20px; }
+  .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .mono{ font-family:'Space Mono',monospace; }
+  .status{ font-size:0.8rem; color:#726b62; margin-top:8px; }
+</style>
+</head>
+<body>
+
+<div id="loginView" class="login-box">
+  <h2>Admin Login</h2>
+  <p style="font-size:0.85rem;color:#726b62;">Enter the admin key to manage products and view orders.</p>
+  <input id="adminKeyInput" type="password" placeholder="Admin key">
+  <button class="btn" onclick="login()" style="width:100%;">Login</button>
+  <p class="status" id="loginStatus"></p>
+</div>
+
+<div id="appView" style="display:none;">
+  <header>
+    <h1>Balaji Enterprise — Admin Panel</h1>
+    <button class="tab" onclick="logout()" style="background:var(--brick);color:#fff;">Logout</button>
+  </header>
+  <main>
+    <div class="tabs">
+      <button class="tab active" id="tabProducts" onclick="showTab('products')">Products</button>
+      <button class="tab" id="tabOrders" onclick="showTab('orders')">Orders</button>
+    </div>
+
+    <div class="panel active" id="panelProducts">
+      <div class="card-form">
+        <h3 id="formTitle">Add New Product</h3>
+        <input type="hidden" id="editId">
+        <div class="grid2">
+          <input id="pName" placeholder="Product name">
+          <input id="pDesc" placeholder="Short description">
+          <input id="pPrice" type="number" placeholder="Price (₹)">
+          <input id="pOld" type="number" placeholder="Old price (optional)">
+          <input id="pTag" placeholder="Tag e.g. Best Seller (optional)">
+          <select id="pIcon">
+            <option value="pan">Frying Pan icon</option>
+            <option value="kadhai">Kadhai icon</option>
+            <option value="cooker">Pressure Cooker icon</option>
+            <option value="knife">Knife icon</option>
+            <option value="mixer">Mixer icon</option>
+            <option value="plate">Dinner Set icon</option>
+            <option value="bottle">Bottle icon</option>
+            <option value="board">Chopping Board icon</option>
+            <option value="jar">Storage Jar icon</option>
+            <option value="stove">Gas Stove icon</option>
+            <option value="pin">Rolling Pin icon</option>
+            <option value="tawa">Tawa icon</option>
+          </select>
+        </div>
+        <textarea id="pDetail" rows="2" placeholder="Full description"></textarea>
+        <input id="pFeatures" placeholder="Features, comma separated">
+        <input id="pSpecs" placeholder="Specs as key:value pairs, comma separated e.g. Material:Steel, Weight:500g">
+        <button class="btn" onclick="saveProduct()">Save Product</button>
+        <button class="btn" style="background:#888;" onclick="resetForm()">Cancel</button>
+        <p class="status" id="productStatus"></p>
+      </div>
+
+      <table>
+        <thead><tr><th>ID</th><th>Name</th><th>Price</th><th>Reviews</th><th>Actions</th></tr></thead>
+        <tbody id="productsTableBody"></tbody>
+      </table>
+    </div>
+
+    <div class="panel" id="panelOrders">
+      <table>
+        <thead><tr><th>Order ID</th><th>Customer</th><th>Phone</th><th>Payment</th><th>Total</th><th>Placed</th></tr></thead>
+        <tbody id="ordersTableBody"></tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<script>
+let adminKey = "";
+let products = [];
+
+function escapeHTML(str){
+  if(str === null || str === undefined) return "";
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function login(){
+  adminKey = document.getElementById('adminKeyInput').value.trim();
+  if(!adminKey){ document.getElementById('loginStatus').textContent = "Please enter the admin key."; return; }
+  // verify by trying to fetch orders
+  fetch('/api/admin/orders', { headers: { 'x-admin-key': adminKey } })
+    .then(res => {
+      if(!res.ok) throw new Error('bad key');
+      document.getElementById('loginView').style.display = 'none';
+      document.getElementById('appView').style.display = 'block';
+      loadProducts();
+      loadOrders();
+    })
+    .catch(() => { document.getElementById('loginStatus').textContent = "Incorrect admin key."; });
+}
+
+function logout(){
+  adminKey = "";
+  document.getElementById('appView').style.display = 'none';
+  document.getElementById('loginView').style.display = 'block';
+}
+
+function showTab(tab){
+  document.getElementById('tabProducts').classList.toggle('active', tab==='products');
+  document.getElementById('tabOrders').classList.toggle('active', tab==='orders');
+  document.getElementById('panelProducts').classList.toggle('active', tab==='products');
+  document.getElementById('panelOrders').classList.toggle('active', tab==='orders');
+}
+
+async function loadProducts(){
+  const res = await fetch('/api/products');
+  products = await res.json();
+  const body = document.getElementById('productsTableBody');
+  body.innerHTML = products.map(p => `
+    <tr>
+      <td class="mono">${p.id}</td>
+      <td>${escapeHTML(p.name)}</td>
+      <td class="mono">₹${p.price}</td>
+      <td>${p.reviews.length}</td>
+      <td class="row-actions">
+        <button class="edit-btn" onclick="editProduct(${p.id})">Edit</button>
+        <button class="del-btn" onclick="deleteProduct(${p.id})">Delete</button>
+      </td>
+    </tr>`).join('');
+}
+
+async function loadOrders(){
+  const res = await fetch('/api/admin/orders', { headers:{ 'x-admin-key': adminKey } });
+  const orders = await res.json();
+  const body = document.getElementById('ordersTableBody');
+  if(!orders.length){
+    body.innerHTML = '<tr><td colspan="6" style="text-align:center;color:#948d81;">No orders yet.</td></tr>';
+    return;
+  }
+  body.innerHTML = orders.map(o => `
+    <tr>
+      <td class="mono">${escapeHTML(o.orderId)}</td>
+      <td>${escapeHTML(o.name)}</td>
+      <td>${escapeHTML(o.phone)}</td>
+      <td>${escapeHTML(o.paymentMethod)}</td>
+      <td class="mono">₹${o.total}</td>
+      <td>${new Date(o.createdAt).toLocaleString()}</td>
+    </tr>`).join('');
+}
+
+function editProduct(id){
+  const p = products.find(x => x.id === id);
+  document.getElementById('formTitle').textContent = "Edit Product #" + id;
+  document.getElementById('editId').value = id;
+  document.getElementById('pName').value = p.name;
+  document.getElementById('pDesc').value = p.desc;
+  document.getElementById('pPrice').value = p.price;
+  document.getElementById('pOld').value = p.old || "";
+  document.getElementById('pTag').value = p.tag || "";
+  document.getElementById('pIcon').value = p.icon;
+  document.getElementById('pDetail').value = p.detail;
+  document.getElementById('pFeatures').value = p.features.join(", ");
+  document.getElementById('pSpecs').value = Object.entries(p.specs).map(([k,v]) => `${k}:${v}`).join(", ");
+  window.scrollTo(0,0);
+}
+
+function resetForm(){
+  document.getElementById('formTitle').textContent = "Add New Product";
+  document.getElementById('editId').value = "";
+  ['pName','pDesc','pPrice','pOld','pTag','pDetail','pFeatures','pSpecs'].forEach(id => document.getElementById(id).value = "");
+}
+
+async function saveProduct(){
+  const id = document.getElementById('editId').value;
+  const specsRaw = document.getElementById('pSpecs').value;
+  const specs = {};
+  specsRaw.split(",").forEach(pair => {
+    const [k, v] = pair.split(":");
+    if(k && v) specs[k.trim()] = v.trim();
+  });
+
+  const payload = {
+    name: document.getElementById('pName').value.trim(),
+    desc: document.getElementById('pDesc').value.trim(),
+    price: Number(document.getElementById('pPrice').value),
+    old: document.getElementById('pOld').value ? Number(document.getElementById('pOld').value) : null,
+    tag: document.getElementById('pTag').value.trim() || null,
+    icon: document.getElementById('pIcon').value,
+    bg: "#EDE4D3",
+    detail: document.getElementById('pDetail').value.trim(),
+    features: document.getElementById('pFeatures').value.split(",").map(s => s.trim()).filter(Boolean),
+    specs,
+    reviews: id ? undefined : []
+  };
+
+  const url = id ? `/api/admin/products/${id}` : '/api/admin/products';
+  const method = id ? 'PUT' : 'POST';
+
+  const res = await fetch(url, {
+    method,
+    headers:{ 'Content-Type':'application/json', 'x-admin-key': adminKey },
+    body: JSON.stringify(payload)
+  });
+
+  if(res.ok){
+    document.getElementById('productStatus').textContent = "Saved successfully.";
+    resetForm();
+    loadProducts();
+  }else{
+    document.getElementById('productStatus').textContent = "Something went wrong.";
+  }
+}
+
+async function deleteProduct(id){
+  if(!confirm("Delete this product?")) return;
+  const res = await fetch(`/api/admin/products/${id}`, {
+    method:'DELETE',
+    headers:{ 'x-admin-key': adminKey }
+  });
+  if(res.ok) loadProducts();
+}
+</script>
+</body>
+</html>

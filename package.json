@@ -1,0 +1,13 @@
+{
+  "name": "balaji-enterprise",
+  "version": "1.0.0",
+  "description": "Balaji Enterprise - kitchen essentials online store with a simple Node.js backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=16"
+  }
+}
