@@ -157,6 +157,7 @@
     position:relative; cursor:pointer;
   }
   .card-icon svg{ width:88px; height:88px; }
+  .card-photo-img{ width:100%; height:100%; object-fit:cover; border-radius:10px; }
   .badge-tag{
     position:absolute; top:8px; left:8px;
     background:var(--brick); color:#fff; font-family:'Space Mono',monospace;
@@ -335,6 +336,7 @@
     display:flex; align-items:center; justify-content:center; padding:30px;
   }
   .pm-photo svg{ width:170px; height:170px; }
+  .pm-photo-img{ width:100%; height:100%; object-fit:cover; border-radius:18px 0 0 0; min-height:280px; }
   .pm-gallery{ display:flex; flex-direction:column; }
   .pm-thumbs{ display:flex; gap:8px; padding:0 20px 20px; }
   .pm-thumb{
@@ -671,9 +673,9 @@ function renderProducts(){
     const avg = avgRating(p);
     return `
     <div class="card">
-      <div class="card-icon" style="background:${p.bg}" onclick="openProductModal(${p.id})">
+      <div class="card-icon" style="background:${p.photo ? '#fff' : p.bg}" onclick="openProductModal(${p.id})">
         ${p.tag ? `<span class="badge-tag">${escapeHTML(p.tag)}</span>` : ""}
-        ${icons[p.icon]}
+        ${p.photo ? `<img src="${escapeHTML(p.photo)}" alt="${escapeHTML(p.name)}" class="card-photo-img">` : icons[p.icon]}
       </div>
       <h3 onclick="openProductModal(${p.id})">${escapeHTML(p.name)}</h3>
       <div class="rating-row">${renderStars(avg)} <span>${avg.toFixed(1)} (${p.reviews.length})</span></div>
@@ -764,21 +766,27 @@ function renderProductModal(){
     <button class="pm-close" onclick="closeProductModal()">✕</button>
     <div class="pm-top">
       <div class="pm-gallery">
-        <div class="pm-photo" style="background:${p.bg}">${buildGalleryImage(p.icon, activeGalleryView)}</div>
-        <div class="pm-thumbs">
-          <button class="pm-thumb ${activeGalleryView==='front'?'active':''}" onclick="setGalleryView('front')">
-            <span class="pm-thumb-icon" style="background:${p.bg}">${buildGalleryImage(p.icon,'front')}</span>
-            <span>Front view</span>
-          </button>
-          <button class="pm-thumb ${activeGalleryView==='top'?'active':''}" onclick="setGalleryView('top')">
-            <span class="pm-thumb-icon" style="background:${p.bg}">${buildGalleryImage(p.icon,'top')}</span>
-            <span>Top view</span>
-          </button>
-          <button class="pm-thumb ${activeGalleryView==='context'?'active':''}" onclick="setGalleryView('context')">
-            <span class="pm-thumb-icon" style="background:${p.bg}">${buildGalleryImage(p.icon,'context')}</span>
-            <span>In your kitchen</span>
-          </button>
-        </div>
+        ${p.photo ? `
+          <div class="pm-photo" style="background:#fff;padding:0;">
+            <img src="${escapeHTML(p.photo)}" alt="${escapeHTML(p.name)}" class="pm-photo-img">
+          </div>
+        ` : `
+          <div class="pm-photo" style="background:${p.bg}">${buildGalleryImage(p.icon, activeGalleryView)}</div>
+          <div class="pm-thumbs">
+            <button class="pm-thumb ${activeGalleryView==='front'?'active':''}" onclick="setGalleryView('front')">
+              <span class="pm-thumb-icon" style="background:${p.bg}">${buildGalleryImage(p.icon,'front')}</span>
+              <span>Front view</span>
+            </button>
+            <button class="pm-thumb ${activeGalleryView==='top'?'active':''}" onclick="setGalleryView('top')">
+              <span class="pm-thumb-icon" style="background:${p.bg}">${buildGalleryImage(p.icon,'top')}</span>
+              <span>Top view</span>
+            </button>
+            <button class="pm-thumb ${activeGalleryView==='context'?'active':''}" onclick="setGalleryView('context')">
+              <span class="pm-thumb-icon" style="background:${p.bg}">${buildGalleryImage(p.icon,'context')}</span>
+              <span>In your kitchen</span>
+            </button>
+          </div>
+        `}
       </div>
       <div class="pm-info">
         ${p.tag ? `<span class="badge-tag" style="position:static;display:inline-block;margin-bottom:8px;">${escapeHTML(p.tag)}</span>` : ""}
@@ -1288,3 +1296,4 @@ loadProducts();
 </script>
 </body>
 </html>
+
