@@ -84,6 +84,7 @@
         <textarea id="pDetail" rows="2" placeholder="Full description"></textarea>
         <input id="pFeatures" placeholder="Features, comma separated">
         <input id="pSpecs" placeholder="Specs as key:value pairs, comma separated e.g. Material:Steel, Weight:500g">
+        <input id="pPhoto" placeholder="Photo path (optional) e.g. images/frying-pan.jpg — leave blank to use the illustrated icon">
         <button class="btn" onclick="saveProduct()">Save Product</button>
         <button class="btn" style="background:#888;" onclick="resetForm()">Cancel</button>
         <p class="status" id="productStatus"></p>
@@ -195,13 +196,14 @@ function editProduct(id){
   document.getElementById('pDetail').value = p.detail;
   document.getElementById('pFeatures').value = p.features.join(", ");
   document.getElementById('pSpecs').value = Object.entries(p.specs).map(([k,v]) => `${k}:${v}`).join(", ");
+  document.getElementById('pPhoto').value = p.photo || "";
   window.scrollTo(0,0);
 }
 
 function resetForm(){
   document.getElementById('formTitle').textContent = "Add New Product";
   document.getElementById('editId').value = "";
-  ['pName','pDesc','pPrice','pOld','pTag','pDetail','pFeatures','pSpecs'].forEach(id => document.getElementById(id).value = "");
+  ['pName','pDesc','pPrice','pOld','pTag','pDetail','pFeatures','pSpecs','pPhoto'].forEach(id => document.getElementById(id).value = "");
 }
 
 async function saveProduct(){
@@ -224,6 +226,7 @@ async function saveProduct(){
     detail: document.getElementById('pDetail').value.trim(),
     features: document.getElementById('pFeatures').value.split(",").map(s => s.trim()).filter(Boolean),
     specs,
+    photo: document.getElementById('pPhoto').value.trim() || null,
     reviews: id ? undefined : []
   };
 
