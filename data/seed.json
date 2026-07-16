@@ -1,6 +1,6 @@
 {
   "products": [
-    { "id":1, "name":"Non-Stick Frying Pan", "desc":"26cm, induction friendly", "price":699, "old":899, "tag":"Best Seller", "icon":"pan", "bg":"#F3E4C7",
+    { "id":1, "name":"Non-Stick Frying Pan", "desc":"26cm, induction friendly", "price":699, "old":899, "tag":"Best Seller", "icon":"pan", "bg":"#F3E4C7","photo":"images/non_stick_fry.jpg",
       "detail":"A everyday frying pan built for parathas, eggs and stir-fries. The reinforced non-stick coating means less oil and easier cleanup, while the flat base spreads heat evenly across gas, induction and electric stoves.",
       "features":["3-layer non-stick coating","Works on gas, induction & electric","Ergonomic bakelite handle stays cool","Even heat distribution base"],
       "specs":{"Material":"Aluminium, non-stick coated", "Diameter":"26 cm", "Weight":"620 g", "Warranty":"1 year"},
