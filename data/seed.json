@@ -8,7 +8,7 @@
         {"name":"Priya Sharma", "rating":5, "date":"3 weeks ago", "comment":"Perfect size for daily cooking, nothing sticks even on high heat."},
         {"name":"Ramesh Patel", "rating":4, "date":"1 month ago", "comment":"Good quality, handle gets slightly warm after long use but overall happy."}
       ]},
-    { "id":2, "name":"Stainless Steel Kadhai", "desc":"3L, heavy gauge steel", "price":849, "old":null, "tag":null, "icon":"kadhai", "bg":"#DCE6DE",
+    { "id":2, "name":"Stainless Steel Kadhai", "desc":"3L, heavy gauge steel", "price":849, "old":null, "tag":null, "icon":"kadhai", "bg":"#DCE6DE", "photo":"stainless_steel_kadhai.jpg",
       "detail":"A deep, heavy-gauge kadhai for frying, curries and everyday tadka. The wide mouth and sturdy handles make it easy to stir large batches without splashing.",
       "features":["18/8 food-grade stainless steel","Deep design, ideal for frying & curries","Riveted stay-cool handles","Induction & gas compatible"],
       "specs":{"Material":"Stainless steel", "Capacity":"3 Litres", "Weight":"780 g", "Warranty":"2 years"},
