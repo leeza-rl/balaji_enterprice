@@ -48,7 +48,7 @@
         {"name":"Sneha Desai", "rating":5, "date":"4 days ago", "comment":"Beautiful finish, feels premium and washes up easily."},
         {"name":"Amit Kumar", "rating":4, "date":"1 month ago", "comment":"Good set for the price, packaging was secure."}
       ]},
-    { "id":7, "name":"Copper Water Bottle", "desc":"1L, Ayurvedic copper vessel", "price":399, "old":499, "tag":"New", "icon":"bottle", "bg":"#E9D2BE",
+    { "id":7, "name":"Copper Water Bottle", "desc":"1L, Ayurvedic copper vessel", "price":399, "old":499, "tag":"New", "icon":"bottle", "bg":"#E9D2BE","photo":"images/water_bottle.jpg",
       "detail":"A handcrafted pure copper bottle that follows the Ayurvedic practice of storing water in copper vessels overnight. Leak-proof cap makes it travel-friendly too.",
       "features":["100% pure copper, Ayurveda-approved","Leak-proof screw cap","Improves taste of stored water","Handcrafted finish"],
       "specs":{"Material":"Pure copper", "Capacity":"1 Litre", "Care":"Hand wash only", "Warranty":"6 months"},
