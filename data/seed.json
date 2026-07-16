@@ -16,7 +16,7 @@
         {"name":"Anjali Verma", "rating":5, "date":"2 weeks ago", "comment":"Sturdy build, doesn't discolour even after regular use."},
         {"name":"Suresh Nair", "rating":4, "date":"2 months ago", "comment":"Heavy in a good way — heats evenly, easy to clean."}
       ]},
-    { "id":3, "name":"Pressure Cooker 5L", "desc":"ISI marked, inner lid", "price":1499, "old":1799, "tag":"Deal", "icon":"cooker", "bg":"#E8D6CE",
+    { "id":3, "name":"Pressure Cooker 5L", "desc":"ISI marked, inner lid", "price":1499, "old":1799, "tag":"Deal", "icon":"cooker", "bg":"#E8D6CE", "photo":"images/pressure_cooker.jpg",
       "detail":"A reliable 5 litre pressure cooker for dal, rice and everyday meals. The inner-lid design seals tightly for consistent, safe pressure cooking every time.",
       "features":["ISI certified safety valve","Inner lid design for better sealing","Gasket-release system","Suitable for gas & induction"],
       "specs":{"Material":"Aluminium body", "Capacity":"5 Litres", "Valve":"Standard weight valve", "Warranty":"2 years"},
