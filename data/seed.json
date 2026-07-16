@@ -88,7 +88,7 @@
         {"name":"Sneha Desai", "rating":5, "date":"4 weeks ago", "comment":"Smooth finish, rolls dough evenly without sticking."},
         {"name":"Amit Kumar", "rating":4, "date":"2 months ago", "comment":"Good weight and grip, does the job well."}
       ]},
-    { "id":12, "name":"Non-Stick Tawa", "desc":"28cm, flat dosa/roti tawa", "price":449, "old":549, "tag":"Best Seller", "icon":"tawa", "bg":"#F3E4C7","photo":"images/non_sstick_tawa.jfif",
+    { "id":12, "name":"Non-Stick Tawa", "desc":"28cm, flat dosa/roti tawa", "price":449, "old":549, "tag":"Best Seller", "icon":"tawa", "bg":"#F3E4C7","photo":"images/non-stick_tawa.jfif",
       "detail":"A flat 28cm tawa built for crisp dosas and soft rotis, with a non-stick surface that spreads heat evenly and needs very little oil.",
       "features":["Flat design perfect for dosa & roti","Non-stick coating, low-oil cooking","Even heat spread","Compatible with gas & induction"],
       "specs":{"Material":"Aluminium, non-stick coated", "Diameter":"28 cm", "Weight":"540 g", "Warranty":"1 year"},
@@ -120,7 +120,7 @@
         {"name":"Anjali Verma", "rating":4, "date":"5 days ago", "comment":"Saves so much time chopping onions, easy to clean too."},
         {"name":"Suresh Nair", "rating":5, "date":"3 weeks ago", "comment":"Sturdy build, works well on most vegetables."}
       ]},
-    { "id":16, "name":"Digital Kitchen Weighing Scale", "desc":"5kg capacity, 1g precision", "price":599, "old":null, "tag":null, "icon":"scale", "bg":"#DDE2E6","photo":"images/digital_kitchen_weighting_scale.jpg",
+    { "id":16, "name":"Digital Kitchen Weighing Scale", "desc":"5kg capacity, 1g precision", "price":599, "old":null, "tag":null, "icon":"scale", "bg":"#DDE2E6","photo":"images/digital_kitchen_weighing_scale.jpg",
       "detail":"A digital kitchen scale for accurate measuring while baking or portioning ingredients, with a clear LCD display and auto shut-off to save battery.",
       "features":["Measures up to 5 kg","Precise to 1 gram","LCD display with backlight","Auto shut-off to save battery"],
       "specs":{"Capacity":"5 kg", "Precision":"1 g", "Power":"2 x AAA batteries", "Warranty":"1 year"},
