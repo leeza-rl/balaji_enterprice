@@ -40,7 +40,7 @@
         {"name":"Meera Joshi", "rating":5, "date":"1 week ago", "comment":"Grinds idli batter smoothly, motor doesn't heat up quickly."},
         {"name":"Rohit Mehta", "rating":4, "date":"2 months ago", "comment":"Powerful machine, a bit noisy but does the job well."}
       ]},
-    { "id":6, "name":"Steel Dinner Set (24pc)", "desc":"Rust-proof, dishwasher safe", "price":1299, "old":null, "tag":null, "icon":"plate", "bg":"#E2E6E2",
+    { "id":6, "name":"Steel Dinner Set (24pc)", "desc":"Rust-proof, dishwasher safe", "price":1299, "old":null, "tag":null, "icon":"plate", "bg":"#E2E6E2", "photo":"images/steel_dinner_set.jpg",
       "detail":"A complete 24-piece stainless steel dinner set for a family of six, with a mirror finish that stays shiny wash after wash.",
       "features":["24-piece set for family of 6","Rust-proof stainless steel","Dishwasher safe","Mirror-finish"],
       "specs":{"Material":"Stainless steel", "Pieces":"24", "Includes":"Plates, bowls, spoons", "Warranty":"1 year"},
@@ -56,7 +56,7 @@
         {"name":"Priya Sharma", "rating":5, "date":"2 weeks ago", "comment":"Water tastes noticeably better, bottle looks elegant on the desk."},
         {"name":"Vikram Singh", "rating":4, "date":"5 weeks ago", "comment":"Good quality copper, just remember to hand wash it."}
       ]},
-    { "id":8, "name":"Wooden Chopping Board", "desc":"Neem wood, 30x20cm", "price":299, "old":null, "tag":null, "icon":"board", "bg":"#EAD9BE",
+    { "id":8, "name":"Wooden Chopping Board", "desc":"Neem wood, 30x20cm", "price":299, "old":null, "tag":null, "icon":"board", "bg":"#EAD9BE", "photo":"images/Woodenhopping_board.jpg",
       "detail":"A solid neem wood chopping board with a naturally antibacterial surface, finished with a juice groove to keep countertops clean while you cook.",
       "features":["Solid neem wood, naturally antibacterial","Juice groove around edge","Non-slip rubber feet","Reversible design"],
       "specs":{"Material":"Neem wood", "Size":"30 x 20 cm", "Thickness":"2 cm", "Care":"Hand wash, oil occasionally"},
@@ -64,7 +64,7 @@
         {"name":"Anjali Verma", "rating":5, "date":"3 weeks ago", "comment":"Sturdy, doesn't slip on the counter, exactly as described."},
         {"name":"Rohit Mehta", "rating":4, "date":"2 months ago", "comment":"Solid board, developed a small crack after months of heavy use."}
       ]},
-    { "id":9, "name":"Airtight Storage Set (6pc)", "desc":"BPA-free, modular jars", "price":649, "old":null, "tag":null, "icon":"jar", "bg":"#EDE6D2",
+    { "id":9, "name":"Airtight Storage Set (6pc)", "desc":"BPA-free, modular jars", "price":649, "old":null, "tag":null, "icon":"jar", "bg":"#EDE6D2", "photo":"images/airtight_storage_set.jpg",
       "detail":"Six modular, airtight jars that stack neatly in your pantry, keeping grains, snacks and spices fresh for longer.",
       "features":["6 modular airtight jars","BPA-free food-grade plastic","Stackable space-saving design","Keeps grains & snacks fresh longer"],
       "specs":{"Material":"BPA-free plastic", "Pieces":"6", "Sizes":"500ml – 1.5L mixed", "Warranty":"6 months"},
@@ -72,7 +72,7 @@
         {"name":"Kavita Iyer", "rating":4, "date":"1 week ago", "comment":"Seals well, keeps snacks crunchy for weeks."},
         {"name":"Meera Joshi", "rating":5, "date":"6 weeks ago", "comment":"Stacks perfectly in my pantry shelf, very handy set."}
       ]},
-    { "id":10, "name":"2-Burner Gas Stove", "desc":"ISI marked, toughened glass top", "price":1899, "old":2199, "tag":"Deal", "icon":"stove", "bg":"#DDD9D4",
+    { "id":10, "name":"2-Burner Gas Stove", "desc":"ISI marked, toughened glass top", "price":1899, "old":2199, "tag":"Deal", "icon":"stove", "bg":"#DDD9D4","photo":"images/burner_gas_stove.jpg",
       "detail":"A reliable 2-burner gas stove with a toughened glass top that wipes clean instantly, and brass burners for a steady, even flame.",
       "features":["ISI marked for safety","Toughened glass top, easy to clean","Brass burners for even flame","Anti-skid rubber feet"],
       "specs":{"Burners":"2", "Top":"Toughened glass", "Ignition":"Manual", "Warranty":"1 year"},
@@ -80,7 +80,7 @@
         {"name":"Suresh Nair", "rating":5, "date":"2 weeks ago", "comment":"Flame is even on both burners, glass top cleans in seconds."},
         {"name":"Neha Gupta", "rating":4, "date":"1 month ago", "comment":"Sturdy stove, installation was quick with the manual provided."}
       ]},
-    { "id":11, "name":"Wooden Rolling Pin (Belan)", "desc":"Sheesham wood, 30cm", "price":149, "old":null, "tag":null, "icon":"pin", "bg":"#EAD9BE",
+    { "id":11, "name":"Wooden Rolling Pin (Belan)", "desc":"Sheesham wood, 30cm", "price":149, "old":null, "tag":null, "icon":"pin", "bg":"#EAD9BE","photo":"images/wooden_rolling_pin.jpg",
       "detail":"A traditional sheesham wood rolling pin with tapered ends, giving you better control for rolling out even, round rotis and parathas.",
       "features":["Solid sheesham wood, smooth finish","Tapered ends for easy control","Lightweight yet sturdy","Traditional Indian design"],
       "specs":{"Material":"Sheesham wood", "Length":"30 cm", "Care":"Wipe clean, avoid soaking", "Warranty":"N/A"},
@@ -88,7 +88,7 @@
         {"name":"Sneha Desai", "rating":5, "date":"4 weeks ago", "comment":"Smooth finish, rolls dough evenly without sticking."},
         {"name":"Amit Kumar", "rating":4, "date":"2 months ago", "comment":"Good weight and grip, does the job well."}
       ]},
-    { "id":12, "name":"Non-Stick Tawa", "desc":"28cm, flat dosa/roti tawa", "price":449, "old":549, "tag":"Best Seller", "icon":"tawa", "bg":"#F3E4C7",
+    { "id":12, "name":"Non-Stick Tawa", "desc":"28cm, flat dosa/roti tawa", "price":449, "old":549, "tag":"Best Seller", "icon":"tawa", "bg":"#F3E4C7","photo":"images/non_sstick_tawa.jfif",
       "detail":"A flat 28cm tawa built for crisp dosas and soft rotis, with a non-stick surface that spreads heat evenly and needs very little oil.",
       "features":["Flat design perfect for dosa & roti","Non-stick coating, low-oil cooking","Even heat spread","Compatible with gas & induction"],
       "specs":{"Material":"Aluminium, non-stick coated", "Diameter":"28 cm", "Weight":"540 g", "Warranty":"1 year"},
@@ -96,7 +96,7 @@
         {"name":"Priya Sharma", "rating":5, "date":"3 days ago", "comment":"Dosas come off perfectly, no sticking at all."},
         {"name":"Arjun Reddy", "rating":4, "date":"5 weeks ago", "comment":"Great tawa for the price, heats up quickly."}
       ]},
-    { "id":13, "name":"Masala Dabba (Spice Box)", "desc":"7-compartment, stainless steel", "price":349, "old":null, "tag":null, "icon":"spicebox", "bg":"#F0E1C0",
+    { "id":13, "name":"Masala Dabba (Spice Box)", "desc":"7-compartment, stainless steel", "price":349, "old":null, "tag":null, "icon":"spicebox", "bg":"#F0E1C0","photo":"images/masala_dabba.jpg",
       "detail":"A traditional 7-compartment masala dabba to keep your everyday spices organised and within easy reach, with a clear lid so you can see what's inside at a glance.",
       "features":["7 stainless steel compartments","Clear lid for quick identification","Includes a small spoon","Compact size fits any shelf"],
       "specs":{"Material":"Stainless steel", "Compartments":"7", "Diameter":"19 cm", "Warranty":"6 months"},
@@ -104,7 +104,7 @@
         {"name":"Kavita Iyer", "rating":5, "date":"1 week ago", "comment":"Keeps all my daily spices in one place, lid seals well."},
         {"name":"Sneha Desai", "rating":4, "date":"1 month ago", "comment":"Good size, wish the compartments were a touch deeper."}
       ]},
-    { "id":14, "name":"Idli Steamer Stand (4-plate)", "desc":"Fits standard pressure cookers", "price":399, "old":null, "tag":null, "icon":"idli", "bg":"#E6E9DE",
+    { "id":14, "name":"Idli Steamer Stand (4-plate)", "desc":"Fits standard pressure cookers", "price":399, "old":null, "tag":null, "icon":"idli", "bg":"#E6E9DE","photo":"images/idli_steamer_stand.jpg",
       "detail":"A 4-plate idli stand that fits most pressure cookers and steamers, letting you steam soft idlis for the whole family in one batch.",
       "features":["4 plates, 16 idlis per batch","Fits standard 5L pressure cookers","Food-grade stainless steel","Easy to stack and clean"],
       "specs":{"Material":"Stainless steel", "Plates":"4", "Capacity":"16 idlis", "Warranty":"1 year"},
@@ -112,7 +112,7 @@
         {"name":"Meera Joshi", "rating":5, "date":"2 weeks ago", "comment":"Idlis come out soft and fluffy, fits my cooker perfectly."},
         {"name":"Rohit Mehta", "rating":4, "date":"1 month ago", "comment":"Good quality steel, plates stack neatly for storage."}
       ]},
-    { "id":15, "name":"Vegetable Chopper (Hand-Press)", "desc":"3-blade grid, no electricity needed", "price":449, "old":null, "tag":"New", "icon":"chopper", "bg":"#E3EAD9",
+    { "id":15, "name":"Vegetable Chopper (Hand-Press)", "desc":"3-blade grid, no electricity needed", "price":449, "old":null, "tag":"New", "icon":"chopper", "bg":"#E3EAD9","photo":"images/vegetable_choppe.jpg",
       "detail":"A hand-press vegetable chopper that dices onions, tomatoes and vegetables in seconds, with a stainless steel blade grid and no electricity needed.",
       "features":["3-blade stainless steel grid","One-press chopping action","Detachable, dishwasher-safe container","No electricity required"],
       "specs":{"Material":"Plastic body, steel blades", "Capacity":"600 ml container", "Blades":"3-in-1", "Warranty":"6 months"},
@@ -120,7 +120,7 @@
         {"name":"Anjali Verma", "rating":4, "date":"5 days ago", "comment":"Saves so much time chopping onions, easy to clean too."},
         {"name":"Suresh Nair", "rating":5, "date":"3 weeks ago", "comment":"Sturdy build, works well on most vegetables."}
       ]},
-    { "id":16, "name":"Digital Kitchen Weighing Scale", "desc":"5kg capacity, 1g precision", "price":599, "old":null, "tag":null, "icon":"scale", "bg":"#DDE2E6",
+    { "id":16, "name":"Digital Kitchen Weighing Scale", "desc":"5kg capacity, 1g precision", "price":599, "old":null, "tag":null, "icon":"scale", "bg":"#DDE2E6","photo":"images/digital_kitchen_weighting_scale.jpg",
       "detail":"A digital kitchen scale for accurate measuring while baking or portioning ingredients, with a clear LCD display and auto shut-off to save battery.",
       "features":["Measures up to 5 kg","Precise to 1 gram","LCD display with backlight","Auto shut-off to save battery"],
       "specs":{"Capacity":"5 kg", "Precision":"1 g", "Power":"2 x AAA batteries", "Warranty":"1 year"},
@@ -128,7 +128,7 @@
         {"name":"Neha Gupta", "rating":5, "date":"4 days ago", "comment":"Very accurate, perfect for my baking measurements."},
         {"name":"Vikram Singh", "rating":4, "date":"2 months ago", "comment":"Does the job well, display could be a bit bigger."}
       ]},
-    { "id":17, "name":"Insulated Casserole (Hot Pot) 1.5L", "desc":"Keeps food warm for hours", "price":549, "old":649, "tag":"New", "icon":"casserole", "bg":"#EFDFC8",
+    { "id":17, "name":"Insulated Casserole (Hot Pot) 1.5L", "desc":"Keeps food warm for hours", "price":549, "old":649, "tag":"New", "icon":"casserole", "bg":"#EFDFC8","photo":"images/insulated_casserole.jpg",
       "detail":"An insulated casserole that keeps rotis and rice warm for hours, with a sturdy outer shell and an airtight inner lid.",
       "features":["Keeps food warm for 4-5 hours","Airtight inner lid locks in heat","Sturdy outer shell resists dents","Easy-carry handles"],
       "specs":{"Capacity":"1.5 Litres", "Material":"Plastic shell, steel inner", "Insulation":"4-5 hours", "Warranty":"1 year"},
@@ -136,7 +136,7 @@
         {"name":"Sneha Desai", "rating":5, "date":"6 days ago", "comment":"Rotis stay warm and soft for hours, great for family dinners."},
         {"name":"Amit Kumar", "rating":4, "date":"1 month ago", "comment":"Good quality, a bit bulky but works as promised."}
       ]},
-    { "id":18, "name":"Steel Sauce Pan Set (3pc Pateela)", "desc":"14/16/18cm nesting set", "price":999, "old":null, "tag":null, "icon":"pateela", "bg":"#E7E4DC",
+    { "id":18, "name":"Steel Sauce Pan Set (3pc Pateela)", "desc":"14/16/18cm nesting set", "price":999, "old":null, "tag":null, "icon":"pateela", "bg":"#E7E4DC","photo":"images/steel_sauce_pan_set.jpg",
       "detail":"A set of 3 nesting stainless steel sauce pans (pateela) in different sizes, perfect for boiling milk, cooking dal, or making tea.",
       "features":["3 sizes: 14cm, 16cm, 18cm","Nesting design saves storage space","Works on gas & induction","Lightweight but sturdy"],
       "specs":{"Material":"Stainless steel", "Pieces":"3", "Sizes":"14/16/18 cm", "Warranty":"1 year"},
