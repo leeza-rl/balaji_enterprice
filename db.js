@@ -1,4 +1,4 @@
-// db.js — a tiny file-based "database".
+/ db.js — a tiny file-based "database".
 // For a real production store, swap this for Postgres/MySQL/MongoDB.
 // This version needs ZERO npm installs, so it runs anywhere Node runs.
 
@@ -240,3 +240,4 @@ module.exports = {
   getUserByToken,
   updateProfile,
 };
+
